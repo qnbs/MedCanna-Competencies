@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MedCanna Competencies Guide</title>
+    <meta name="description" content="Interactive guide to medical cannabis competencies based on the 2025 JAMA Network Open consensus statement by Zolotov et al." />
+    <meta name="theme-color" content="#059669" />
+
+    <!-- Icons & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/MedCanna-Competencies/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/MedCanna-Competencies/icons/icon-192.png" />
+    <link rel="manifest" href="/MedCanna-Competencies/manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MedCanna Competencies Guide" />
+    <meta property="og:description" content="Interactive guide to medical cannabis competencies based on the 2025 JAMA consensus statement." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://syradar.github.io/MedCanna-Competencies/" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -11,36 +25,32 @@
         font-family: 'Inter', sans-serif;
         background-color: #f8fafc;
       }
-      /* Custom scrollbar for webkit */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f5f9;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8;
-      }
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+      .animate-fade-in { animation: fadeIn 0.3s ease-out; }
+      /* Skip to content link - visible on focus for accessibility */
+      .skip-link { position: absolute; top: -40px; left: 0; background: #059669; color: #fff; padding: 8px 16px; z-index: 100; transition: top 0.2s; border-radius: 0 0 8px 0; font-weight: 600; }
+      .skip-link:focus { top: 0; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
+    <!-- WCAG 2.2 AA: Skip-to-content link -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <noscript>You need to enable JavaScript to run this application.</noscript>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/MedCanna-Competencies/sw.js').catch(() => {});
+        });
+      }
+    </script>
   </body>
 </html>

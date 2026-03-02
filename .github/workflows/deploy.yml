@@ -1,0 +1,71 @@
+# Deploy MedCanna-Competencies to GitHub Pages
+#
+# Uses the official GitHub Pages Actions (2026 best-practice versions).
+# Triggers on push to main or manual dispatch.
+# Builds with Vite, uploads dist/, and deploys.
+#
+# Action versions (pinned to latest majors as of 2026):
+#   checkout@v5, setup-node@v6, configure-pages@v5,
+#   upload-pages-artifact@v4, deploy-pages@v4
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deployment at a time; do NOT cancel in-progress deploys
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # 1. Checkout repository
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      # 2. Setup Node.js LTS with npm cache
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      # 3. Install dependencies (clean install for CI)
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Type-check before building
+      - name: Type-check
+        run: npm run typecheck
+
+      # 5. Build the Vite project
+      - name: Build
+        run: npm run build
+
+      # 6. Configure GitHub Pages
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      # 7. Upload build output as Pages artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './dist'
+
+      # 8. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,12 +2,17 @@
 export interface SubPoint {
   label: string; // e.g., "i", "ii"
   text: string;
+  evidenceLevel?: string; // e.g. "Level 1a"
+  citation?: string;
 }
 
 export interface CompetencyPoint {
   letter: string; // e.g., "a", "b"
   text: string;
   subPoints?: SubPoint[];
+  clinicalPearl?: string;
+  evidenceLevel?: string;
+  citation?: string;
 }
 
 export interface CompetencyDomain {
@@ -16,6 +21,8 @@ export interface CompetencyDomain {
   shortTitle: string;
   description: string;
   points: CompetencyPoint[];
+  learningObjectives?: string[];
+  keyTakeaways?: string[];
 }
 
 export type ViewState = 'dashboard' | 'curriculum' | 'tutor' | 'quiz' | 'simulation' | 'pharmacology' | 'about' | 'settings' | 'help';

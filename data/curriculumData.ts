@@ -8,19 +8,124 @@ const COMPETENCIES_EN: CompetencyDomain[] = [
     id: 1,
     title: "1. Understand the basics of the endocannabinoid system.",
     shortTitle: "Endocannabinoid System",
-    description: "Foundational knowledge regarding receptors, production, function, and physiological regulation.",
+    description: "Foundational knowledge regarding receptors, production, function, and physiological regulation of the endocannabinoid system (ECS) — one of the most widespread neuromodulatory networks in mammalian physiology.",
+    learningObjectives: [
+      "Identify the two primary cannabinoid receptors (CB1, CB2) and their tissue distribution.",
+      "Explain the synthesis, release, and degradation of key endocannabinoids (AEA, 2-AG).",
+      "Describe how the ECS modulates pain, immune function, mood, appetite, and sleep.",
+      "Recognize the concept of 'endocannabinoid tone' and its clinical relevance."
+    ],
+    keyTakeaways: [
+      "The ECS is a lipid-based retrograde signaling system active throughout the body.",
+      "CB1 predominates in the CNS; CB2 predominates in immune tissues — but both are widely expressed.",
+      "Endocannabinoid tone reflects baseline ECS activity and may underlie conditions like migraine, IBS, and fibromyalgia (Clinical Endocannabinoid Deficiency hypothesis).",
+      "Pharmacological modulation of the ECS is the mechanistic basis for all cannabinoid therapeutics."
+    ],
     points: [
       {
         letter: "a",
-        text: "Understand the basic function and distribution of main cannabinoid receptors."
+        text: "Understand the basic function and distribution of main cannabinoid receptors (CB1 and CB2), including their coupling to G-proteins and downstream signaling cascades.",
+        clinicalPearl: "CB1 inverse agonist rimonabant was withdrawn (2008) due to psychiatric adverse events — illustrating why CB1 receptor distribution in limbic circuits matters clinically.",
+        evidenceLevel: "Level 2a – Narrative review of receptor pharmacology",
+        citation: "Zou S, Kumar U. Cannabinoid receptors and the endocannabinoid system: signaling and function in the central nervous system. Int J Mol Sci. 2018;19(3):833.",
+        subPoints: [
+          {
+            label: "i",
+            text: "CB1 receptors: Predominantly expressed in the central nervous system (cortex, basal ganglia, hippocampus, cerebellum, hypothalamus) and peripheral tissues (adipose, liver, GI tract). Coupled to Gi/o proteins — inhibit adenylyl cyclase, reduce cAMP, modulate ion channels (activate GIRK, inhibit VGCC).",
+            evidenceLevel: "Level 2a",
+            citation: "Mackie K. Cannabinoid receptors: where they are and what they do. J Neuroendocrinol. 2008;20 Suppl 1:10-14."
+          },
+          {
+            label: "ii",
+            text: "CB2 receptors: Primarily found on immune cells (microglia, macrophages, B-cells, T-cells, NK cells), spleen, tonsils, and bone marrow. Also expressed at lower levels in CNS neurons (brainstem, cortex). Activation modulates cytokine release, immune cell migration, and neuroinflammation.",
+            evidenceLevel: "Level 2a",
+            citation: "Turcotte C, Blanchet MR, Laviolette M, Bhilement N. The CB2 receptor and its role as a regulator of inflammation. Cell Mol Life Sci. 2016;73(23):4449-4470."
+          },
+          {
+            label: "iii",
+            text: "Beyond CB1/CB2: Emerging evidence for cannabinoid activity at GPR55 ('CB3 candidate'), TRPV1 (vanilloid receptor), PPARγ (nuclear receptor), and 5-HT1A (serotonin receptor) — expanding the 'cannabinoid receptorome'.",
+            evidenceLevel: "Level 3 – Preclinical + early translational",
+            citation: "Morales P, Reggio PH. An update on non-CB1, non-CB2 cannabinoid related G-protein-coupled receptors. Cannabis Cannabinoid Res. 2017;2(1):265-273."
+          }
+        ]
       },
       {
         letter: "b",
-        text: "Describe the basics of endocannabinoid production, function, enzyme inhibition, and activation, and how endocannabinoid tone is maintained."
+        text: "Describe the basics of endocannabinoid production, function, enzyme inhibition, and activation — including how endocannabinoid tone is maintained through on-demand synthesis and rapid degradation.",
+        clinicalPearl: "FAAH inhibitors (e.g., PF-04457845) are in clinical trials for PTSD and cannabis use disorder — targeting endocannabinoid tone is a growing pharmacological strategy.",
+        evidenceLevel: "Level 1b – Systematic reviews of ECS biochemistry",
+        citation: "Lu HC, Mackie K. Review of the endocannabinoid system. Biol Psychiatry Cogn Neurosci Neuroimaging. 2021;6(6):607-615.",
+        subPoints: [
+          {
+            label: "i",
+            text: "Anandamide (AEA): Synthesized on-demand from membrane phospholipid N-arachidonoyl phosphatidylethanolamine (NAPE) by NAPE-PLD. Partial agonist at CB1, weaker at CB2. Also activates TRPV1. Degraded primarily by fatty acid amide hydrolase (FAAH).",
+            evidenceLevel: "Level 2a",
+            citation: "Devane WA et al. Isolation and structure of a brain constituent that binds to the cannabinoid receptor. Science. 1992;258(5090):1946-1949."
+          },
+          {
+            label: "ii",
+            text: "2-Arachidonoylglycerol (2-AG): The most abundant endocannabinoid in the brain. Synthesized by diacylglycerol lipase (DAGLα/β) from diacylglycerol. Full agonist at both CB1 and CB2. Degraded predominantly by monoacylglycerol lipase (MAGL), with contributions from ABHD6 and ABHD12.",
+            evidenceLevel: "Level 2a",
+            citation: "Sugiura T et al. 2-Arachidonoylglycerol: a possible endogenous cannabinoid receptor ligand in brain. Biochem Biophys Res Commun. 1995;215(1):89-97."
+          },
+          {
+            label: "iii",
+            text: "Retrograde signaling: Endocannabinoids are synthesized postsynaptically and travel backward across the synapse to activate presynaptic CB1 receptors, suppressing neurotransmitter release (both excitatory and inhibitory). This underlies depolarization-induced suppression of inhibition (DSI) and excitation (DSE).",
+            evidenceLevel: "Level 1b",
+            citation: "Kano M et al. Endocannabinoid-mediated control of synaptic transmission. Physiol Rev. 2009;89(1):309-380."
+          },
+          {
+            label: "iv",
+            text: "Endocannabinoid tone: The balance of synthesis (NAPE-PLD, DAGL) and degradation (FAAH, MAGL) enzymes determines baseline ECS signaling. The 'Clinical Endocannabinoid Deficiency' (CED) theory proposes that reduced tone may underlie migraine, fibromyalgia, and irritable bowel syndrome.",
+            evidenceLevel: "Level 3 – Hypothesis with growing clinical support",
+            citation: "Russo EB. Clinical endocannabinoid deficiency reconsidered. Cannabis Cannabinoid Res. 2016;1(1):154-165."
+          }
+        ]
       },
       {
         letter: "c",
-        text: "Understand the role of the endocannabinoid system in regulating core physiologic functions (e.g., stress, sleep, appetite, pain, immunity)."
+        text: "Understand the role of the endocannabinoid system in regulating core physiologic functions — including pain processing, immune modulation, stress/anxiety, appetite/metabolism, sleep, and neuroprotection.",
+        clinicalPearl: "The ECS modulates virtually every physiological system, which explains both the broad therapeutic potential of cannabinoids and their broad side-effect profile.",
+        evidenceLevel: "Level 1a – Multiple systematic reviews",
+        citation: "Pacher P, Bátkai S, Kunos G. The endocannabinoid system as an emerging target of pharmacotherapy. Pharmacol Rev. 2006;58(3):389-462.",
+        subPoints: [
+          {
+            label: "i",
+            text: "Pain: ECS modulates nociception at peripheral, spinal, and supraspinal levels. CB1 activation in dorsal horn and PAG suppresses ascending pain signals. Peripheral CB2 activation reduces inflammatory pain mediators.",
+            evidenceLevel: "Level 1a",
+            citation: "Woodhams SG et al. The role of the endocannabinoid system in pain. Handb Exp Pharmacol. 2015;227:119-143."
+          },
+          {
+            label: "ii",
+            text: "Immune function: CB2 activation on immune cells modulates cytokine release (reduces TNF-α, IL-1β, IL-6), inhibits immune cell migration, and shifts T-helper balance from Th1 toward Th2. Microglial CB2 activation attenuates neuroinflammation.",
+            evidenceLevel: "Level 2a",
+            citation: "Nagarkatti P et al. Cannabinoids as novel anti-inflammatory drugs. Future Med Chem. 2009;1(7):1333-1349."
+          },
+          {
+            label: "iii",
+            text: "Stress and anxiety: AEA signaling in the amygdala and prefrontal cortex regulates the stress response (HPA axis). Acute stress rapidly mobilizes 2-AG (anxiolytic) while chronic stress depletes AEA (anxiogenic). CB1 knockout mice show enhanced anxiety and impaired fear extinction.",
+            evidenceLevel: "Level 2b",
+            citation: "Hill MN et al. Endogenous cannabinoid signaling is essential for stress adaptation. Proc Natl Acad Sci. 2010;107(20):9406-9411."
+          },
+          {
+            label: "iv",
+            text: "Appetite and metabolism: Hypothalamic CB1 activation stimulates appetite (orexigenic). Peripheral CB1 in liver and adipose tissue influences lipogenesis, insulin sensitivity, and energy storage. CB1 antagonism reduces food intake and body weight (cf. rimonabant).",
+            evidenceLevel: "Level 1b",
+            citation: "Di Marzo V et al. Leptin-regulated endocannabinoids are involved in maintaining food intake. Nature. 2001;410(6830):822-825."
+          },
+          {
+            label: "v",
+            text: "Sleep: AEA increases adenosine levels in the basal forebrain, promoting NREM sleep. 2-AG levels fluctuate with circadian rhythm. THC acutely decreases sleep latency but may suppress REM sleep with chronic use; CBD (≥160 mg) may increase total sleep time.",
+            evidenceLevel: "Level 2b",
+            citation: "Kesner AJ, Lovinger DM. Cannabinoids, endocannabinoids and sleep. Front Mol Neurosci. 2020;13:125."
+          },
+          {
+            label: "vi",
+            text: "Neuroprotection: ECS activation reduces excitotoxicity (glutamate overflow), oxidative stress, and neuroinflammation. Relevant in traumatic brain injury, multiple sclerosis, Parkinson's, and Alzheimer's disease models. Both CB1 and CB2 pathways are implicated.",
+            evidenceLevel: "Level 2b – Mostly preclinical with emerging clinical data",
+            citation: "Fernández-Ruiz J et al. Cannabinoids as neuroprotective agents. In: Handbook of Cannabis. Oxford Univ Press; 2014:363-379."
+          }
+        ]
       }
     ]
   },
@@ -263,6 +368,202 @@ const SAMPLE_QUIZ_EN: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation: "Competency 6.d.i requires describing hepatic cytochrome p450 enzymes utilized by exogenous cannabinoids."
+  },
+  // --- Domain 5: Risk Assessment (15 questions, progressive difficulty) ---
+  {
+    id: 5,
+    domainId: 5,
+    question: "Which of the following is the MOST common acute side effect of THC-dominant cannabis?",
+    options: [
+      "Seizures",
+      "Tachycardia and anxiety",
+      "Renal failure",
+      "Hyperglycemia"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.i: THC commonly causes tachycardia, anxiety, dizziness, and dry mouth acutely. Seizures and organ failure are not typical THC effects. (Volkow ND et al. NEJM. 2014;370:2219-2227.)"
+  },
+  {
+    id: 6,
+    domainId: 5,
+    question: "Cannabis smoke exposure is associated with which respiratory effect?",
+    options: [
+      "No respiratory effects whatsoever",
+      "Chronic bronchitis symptoms (cough, phlegm, wheeze)",
+      "Pulmonary fibrosis in most users",
+      "Improved lung function via bronchodilation"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.iii: Smoked cannabis is associated with chronic bronchitis symptoms. Vaporization reduces but does not eliminate respiratory irritation. (Tashkin DP. Ann Am Thorac Soc. 2013;10(3):239-247.)"
+  },
+  {
+    id: 7,
+    domainId: 5,
+    question: "How long after inhaled cannabis use is driving ability significantly impaired?",
+    options: [
+      "10 minutes only",
+      "2–4 hours (up to 6 for naive users)",
+      "Exactly 24 hours",
+      "Cannabis does not impair driving"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.ii: Acute THC impairment of psychomotor function lasts 2–4 hours after inhalation, longer in naive users. (Hartman RL, Huestis MA. Clin Chem. 2013;59(3):478-492.)"
+  },
+  {
+    id: 8,
+    domainId: 5,
+    question: "According to DSM-5, which is a criterion for Cannabis Use Disorder?",
+    options: [
+      "Using cannabis at least once",
+      "Persistent desire or unsuccessful efforts to cut down or control use",
+      "Developing any tolerance",
+      "Experiencing euphoria"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.b.i–ii: DSM-5 criteria for CUD include persistent desire to cut down, continued use despite problems, tolerance, withdrawal, and craving. Single use or euphoria alone do not qualify. (APA. DSM-5-TR. 2022.)"
+  },
+  {
+    id: 9,
+    domainId: 5,
+    question: "What are the hallmark symptoms of Cannabinoid Hyperemesis Syndrome (CHS)?",
+    options: [
+      "Weight gain and constipation",
+      "Cyclic vomiting, abdominal pain, and compulsive hot bathing",
+      "Chronic diarrhea and dehydration",
+      "Psychosis and seizures"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.b.i: CHS presents with cyclic nausea/vomiting, abdominal pain, and relief from hot showers, typically in chronic heavy users. Cessation is the definitive treatment. (Sorensen CJ et al. J Med Toxicol. 2017;13(1):71-87.)"
+  },
+  {
+    id: 10,
+    domainId: 5,
+    question: "What is the primary concern regarding cannabis use during pregnancy?",
+    options: [
+      "Increased maternal appetite",
+      "Association with low birth weight, preterm birth, and potential neurodevelopmental effects",
+      "Cannabis is proven safe in pregnancy",
+      "It reduces morning sickness without risk"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.v: Cannabis use in pregnancy is associated with lower birth weight, preterm birth, and may affect fetal brain development. ACOG and AAP recommend against use during pregnancy/lactation. (Corsi DJ et al. JAMA. 2019;322(2):145-152.)"
+  },
+  {
+    id: 11,
+    domainId: 5,
+    question: "Which contaminant is MOST commonly found in improperly cultivated cannabis products?",
+    options: [
+      "Prions",
+      "Mycotoxins (aflatoxins, ochratoxin A)",
+      "Radioactive isotopes",
+      "Antibiotics"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.c.i: Mycotoxins (especially from Aspergillus and Penicillium molds) are the most common biological contaminants, alongside pesticides and heavy metals (lead, cadmium, arsenic). (McPartland JM, McKernan KJ. J Cannabis Res. 2021;3:21.)"
+  },
+  {
+    id: 12,
+    domainId: 5,
+    question: "What is a significant risk associated with Delta-8 THC products?",
+    options: [
+      "They have no psychoactive effect",
+      "They are all FDA-approved and regulated",
+      "Unregulated synthesis may produce harmful byproducts, and they cause psychoactive effects despite marketing claims",
+      "Delta-8 is identical to CBD"
+    ],
+    correctIndex: 2,
+    explanation: "Competency 5.d: Delta-8 THC is often synthetically converted from CBD with unreliable processes, producing unknown byproducts. It IS psychoactive despite misleading marketing and remains largely unregulated. (FDA Consumer Update. 2022; Meehan-Atrash J, Rahman I. Chem Res Toxicol. 2022;35(3):420-430.)"
+  },
+  {
+    id: 13,
+    domainId: 5,
+    question: "A construction worker with a valid medical cannabis prescription tests positive for THC on a routine workplace drug screen. What is CORRECT regarding his situation?",
+    options: [
+      "Medical cannabis prescriptions override all workplace drug testing policies",
+      "Federal employees and safety-sensitive positions may still face consequences; protections vary by state",
+      "Employers cannot test for THC under any circumstances",
+      "A medical card guarantees immunity in all workplaces"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.e.i: Occupational risks are significant — federal law does not recognize medical cannabis, and safety-sensitive positions (DOT-regulated) typically have zero-tolerance policies regardless of state medical programs. (Dunn KE et al. J Occup Environ Med. 2020;62(8):605-611.)"
+  },
+  {
+    id: 14,
+    domainId: 5,
+    question: "Cannabis withdrawal syndrome typically presents with which symptom cluster?",
+    options: [
+      "Seizures and delirium tremens",
+      "Irritability, insomnia, decreased appetite, and anxiety typically peaking at 2–6 days after cessation",
+      "Hallucinations and psychosis",
+      "No withdrawal symptoms exist"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.b.i: Cannabis Withdrawal Syndrome (DSM-5) includes irritability, anxiety, insomnia, decreased appetite, restlessness, and depressed mood. Onset within 1 week, peak 2–6 days, lasting up to 2 weeks. Unlike alcohol/benzodiazepines, seizures are not a feature. (Bonnet U, Preuss UW. Dtsch Arztebl Int. 2017;114:174-181.)"
+  },
+  {
+    id: 15,
+    domainId: 5,
+    question: "A standard urine immunoassay for cannabis detects which metabolite?",
+    options: [
+      "THC itself (parent compound)",
+      "11-nor-9-carboxy-THC (THC-COOH)",
+      "Cannabidiol (CBD)",
+      "Anandamide (AEA)"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.f: Standard urine assays detect THC-COOH, a non-psychoactive metabolite. Detection windows: occasional users 3–4 days; chronic users up to 30+ days. CBD and endocannabinoids are NOT detected. Confirmatory testing uses GC-MS or LC-MS/MS. (Huestis MA. Clin Chem. 2007;53(6):1194-1209.)"
+  },
+  {
+    id: 16,
+    domainId: 5,
+    question: "Which statement about cannabis use in older adults (≥65 years) is MOST accurate?",
+    options: [
+      "Older adults are resistant to cannabis side effects",
+      "Age-related pharmacokinetic changes (reduced hepatic/renal clearance, increased fat stores) increase sensitivity and prolong effects, raising fall and cognitive impairment risk",
+      "Dosing is identical to younger adults",
+      "THC-dominant vaporizers are the safest option"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.vi: Older adults have altered pharmacokinetics (↓ metabolism, ↑ fat storage, ↑ blood-brain barrier permeability) that increase cannabinoid sensitivity. Falls, orthostatic hypotension, cognitive impairment, and drug interactions are particular concerns. (van den Elsen GAH et al. Drugs Aging. 2014;31(11):781-790.)"
+  },
+  {
+    id: 17,
+    domainId: 5,
+    question: "Heavy adolescent cannabis use (before age 18) is associated with which long-term risk?",
+    options: [
+      "No recognized neurodevelopmental effects",
+      "Reduced IQ, impaired executive function, and increased risk of psychotic disorders (OR ~1.4–2.0 for schizophrenia)",
+      "Accelerated brain maturation",
+      "Improved academic performance"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.a.iv: Adolescent cannabis use during neurodevelopment is associated with reduced cognitive function, lower educational attainment, and a dose-dependent increased risk of psychotic disorders (Marconi A et al. Schizophr Bull. 2016;42(5):1262-1269). The developing endocannabinoid system is particularly vulnerable to exogenous perturbation."
+  },
+  {
+    id: 18,
+    domainId: 5,
+    question: "In a harm reduction framework, which professional role is MOST important in managing cannabis-related disorders?",
+    options: [
+      "Only psychiatrists can be involved",
+      "Multidisciplinary teams including addiction medicine, mental health, primary care, pharmacy, and social work",
+      "Cannabis counselors exclusively",
+      "No professional intervention is needed"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.g: Multidisciplinary healthcare teams — including addiction medicine, psychiatry, primary care, clinical pharmacy, nursing, and social work — are recommended for treating cannabis-related disorders and implementing harm reduction strategies. (Zolotov Y et al. JAMA Netw Open. 2025;8(10):e2535049.)"
+  },
+  {
+    id: 19,
+    domainId: 5,
+    question: "A patient traveling from Colorado (legal recreational) to Texas (no adult-use) with THC products risks which consequence?",
+    options: [
+      "No legal risk; state-issued cards are universally recognized",
+      "Federal and state criminal charges for interstate transport of a controlled substance",
+      "Only a small fine",
+      "Automatic confiscation without criminal liability"
+    ],
+    correctIndex: 1,
+    explanation: "Competency 5.e.ii: Transporting cannabis across state lines is a federal offense regardless of state-level legality. Most states do not honor out-of-state medical cannabis cards. Patients must be counseled about travel restrictions. (Congressional Research Service. Marijuana: Federal vs. State Law. 2024.)"
   }
 ];
 
@@ -455,6 +756,46 @@ const PATIENT_CASES_EN: PatientCase[] = [
         { label: "Increase THC to balance it out", isCorrect: false, feedback: "Incorrect. THC will not fix a metabolic enzyme interaction and may worsen anxiety." }
       ]
     }
+  },
+  {
+    id: 'case-4',
+    name: "Thomas K.",
+    age: 58,
+    condition: "Diabetic Peripheral Neuropathy",
+    tags: ["Neuropathy", "CYP450", "Polypharmacy", "Pain", "MedCanG"],
+    history: "Type 2 diabetes for 15 years. Bilateral burning/tingling pain in feet (NRS 7/10) despite gabapentin 1800 mg/day and duloxetine 60 mg/day. HbA1c 7.2%. Mild hepatic steatosis on ultrasound. Failed pregabalin trial (edema). Cannabis-naive. No psychiatric history. Lives in Germany — eligible under MedCanG (Medizinal-Cannabisgesetz, April 2024): any physician may prescribe; no prior BfArM approval required; dispensed via pharmacy; cost coverage by statutory health insurance (GKV) requires prior approval by Krankenkasse.",
+    medications: ["Gabapentin 1800 mg/d", "Duloxetine 60 mg/d", "Metformin 2000 mg/d", "Empagliflozin 25 mg/d", "Rosuvastatin 20 mg/d"],
+    interactions: [
+      { medication: 'Gabapentin', severity: 'Moderate', mechanism: 'Pharmacodynamic: additive CNS depression (sedation, dizziness). No direct CYP450 interaction (gabapentin is renally cleared), but combined sedation risk requires dose monitoring.' },
+      { medication: 'Duloxetine', severity: 'High', mechanism: 'CYP1A2 substrate + CYP2D6 substrate/inhibitor. CBD inhibits CYP2D6 → may increase duloxetine serum levels 20–50%, risking serotonin syndrome, hypertension, and hepatotoxicity. THC is a weak CYP2D6 substrate.' },
+      { medication: 'Metformin', severity: 'Low', mechanism: 'No significant CYP450 interaction (renally eliminated). THC may transiently affect glucose via CB1-mediated hepatic glucose output; monitor BG.' },
+      { medication: 'Empagliflozin', severity: 'Low', mechanism: 'Primarily UGT-metabolized; minimal CYP interaction. Theoretical additive orthostatic hypotension with THC — monitor in elderly.' },
+      { medication: 'Rosuvastatin', severity: 'Moderate', mechanism: 'Rosuvastatin partly CYP2C9/BCRP transported. CBD inhibits CYP2C9 weakly and BCRP → may modestly increase statin levels. Monitor for myalgia/CK elevation.' }
+    ],
+    cannabisHistory: 'Naive',
+    goals: "Reduce neuropathic pain from 7/10 to ≤4/10 without excessive sedation. Maintain ability to drive (important for work). Willing to try inhaled and oral routes.",
+    historyData: [
+        { week: 0, doseMg: 0, symptomScore: 7, sideEffectScore: 0 }
+    ],
+    idealTreatment: {
+      productTypes: ['Balanced 1:1', 'CBD-Dominant'],
+      routes: ['Sublingual (Tincture)', 'Inhalation (Vaporized)'],
+      minDose: 2,
+      maxDose: 10
+    },
+    feedback: {
+      success: "Excellent clinical reasoning. A balanced THC:CBD or CBD-dominant product via sublingual route is evidence-based for neuropathic pain (NASEM 2017, Level 1b) while minimizing driving impairment. The 'Start Low, Go Slow' approach (1–2.5 mg THC evening, titrate over 2–4 weeks) is crucial given polypharmacy and the CYP2D6 interaction with duloxetine. Under German MedCanG, any physician can prescribe — no specialist required. GKV cost coverage should be applied for early. Monitor: sedation, BG, statin side effects, duloxetine AEs.",
+      failure: "Review Competencies 4.a.iii (Neuropathic pain evidence), 6.a.i (dosing/monitoring), and 6.d.i (CYP450 interactions). Key concerns: (1) Duloxetine + CBD = CYP2D6 inhibition → serotonin syndrome risk; (2) Gabapentin + THC = additive sedation; (3) High-dose THC impairs driving — a fitness-to-drive assessment (Fahreignung) is mandatory in Germany. A balanced or CBD-dominant sublingual tincture with cautious titration is the safest starting approach."
+    },
+    followUp: {
+      scenario: "4-Week Follow-up: Thomas reports pain improved to 5/10 on a balanced 1:1 tincture (5 mg THC / 5 mg CBD sublingual at bedtime). Sleep has improved. However, he reports new morning drowsiness and his wife says he seems 'more unsteady' when rising. His latest HbA1c dropped slightly to 6.9%. He asks about driving to work.",
+      options: [
+        { label: "Double the dose to 10 mg THC / 10 mg CBD for faster pain reduction", isCorrect: false, feedback: "Incorrect. Doubling the dose with existing drowsiness and unsteadiness would worsen CNS depression (gabapentin synergy) and potentially impair driving. Dose increases should be ≤2.5 mg THC per step every 3–7 days (Competency 6.a.i). Also problematic for Fahreignung." },
+        { label: "Reduce gabapentin by 300 mg, keep cannabis dose stable, reassess in 2 weeks, and counsel on driving regulations", isCorrect: true, feedback: "Correct. The drowsiness is likely additive CNS depression from gabapentin + THC. Reducing gabapentin (with prescribing physician coordination) while maintaining the cannabinoid dose may reduce sedation. Under German law (§ 24a StVG + CanG), patients on prescribed cannabis are not automatically unfit to drive, but must demonstrate no impairment (Fahreignung). A 6-week stable-dose period and THC blood level monitoring are recommended before resuming driving. Document counseling in chart." },
+        { label: "Switch entirely to high-dose CBD isolate (200 mg/d) and discontinue THC", isCorrect: false, feedback: "Suboptimal. While CBD alone has some analgesic properties, the NNT for neuropathic pain with CBD-only is poorly established. THC is the primary analgesic component supported by evidence (Aviram & Samuelly-Leichtag 2017). High-dose CBD also increases the CYP2D6 inhibition of duloxetine. A balanced approach with dose optimization is preferred." },
+        { label: "Add a THC-dominant vaporizer for daytime breakthrough pain", isCorrect: false, feedback: "Risky. Adding inhaled THC during daytime would almost certainly impair driving and is contraindicated for a cannabis-naive patient with occupational driving needs. Not aligned with the patient's goals or Fahreignung requirements." }
+      ]
+    }
   }
 ];
 
@@ -465,19 +806,124 @@ const COMPETENCIES_DE: CompetencyDomain[] = [
     id: 1,
     title: "1. Verstehen Sie die Grundlagen des Endocannabinoid-Systems.",
     shortTitle: "Endocannabinoid-System",
-    description: "Grundlegendes Wissen über Rezeptoren, Produktion, Funktion und physiologische Regulation.",
+    description: "Grundlegendes Wissen über Rezeptoren, Produktion, Funktion und physiologische Regulation des Endocannabinoid-Systems (ECS) — eines der am weitesten verbreiteten neuromodulatorischen Netzwerke in der Säugetierphysiologie.",
+    learningObjectives: [
+      "Die beiden primären Cannabinoid-Rezeptoren (CB1, CB2) und ihre Gewebeverteilung identifizieren.",
+      "Die Synthese, Freisetzung und den Abbau wichtiger Endocannabinoide (AEA, 2-AG) erklären.",
+      "Beschreiben, wie das ECS Schmerz, Immunfunktion, Stimmung, Appetit und Schlaf moduliert.",
+      "Das Konzept des 'Endocannabinoid-Tonus' und seine klinische Relevanz erkennen."
+    ],
+    keyTakeaways: [
+      "Das ECS ist ein lipidbasiertes retrogrades Signalsystem, das im gesamten Körper aktiv ist.",
+      "CB1 dominiert im ZNS; CB2 dominiert in Immungeweben — aber beide sind weit verbreitet exprimiert.",
+      "Der Endocannabinoid-Tonus reflektiert die basale ECS-Aktivität und könnte Erkrankungen wie Migräne, Reizdarmsyndrom und Fibromyalgie zugrunde liegen (Hypothese des klinischen Endocannabinoid-Mangels).",
+      "Die pharmakologische Modulation des ECS ist die mechanistische Grundlage aller Cannabinoid-Therapeutika."
+    ],
     points: [
       {
         letter: "a",
-        text: "Verstehen Sie die grundlegende Funktion und Verteilung der wichtigsten Cannabinoid-Rezeptoren."
+        text: "Verstehen Sie die grundlegende Funktion und Verteilung der wichtigsten Cannabinoid-Rezeptoren (CB1 und CB2), einschließlich ihrer Kopplung an G-Proteine und nachgeschalteter Signalkaskaden.",
+        clinicalPearl: "Der CB1-inverse Agonist Rimonabant wurde 2008 wegen psychiatrischer Nebenwirkungen zurückgezogen — dies verdeutlicht, warum die CB1-Rezeptorverteilung in limbischen Schaltkreisen klinisch relevant ist.",
+        evidenceLevel: "Level 2a – Narratives Review der Rezeptorpharmakologie",
+        citation: "Zou S, Kumar U. Cannabinoid receptors and the endocannabinoid system: signaling and function in the central nervous system. Int J Mol Sci. 2018;19(3):833.",
+        subPoints: [
+          {
+            label: "i",
+            text: "CB1-Rezeptoren: Vorwiegend im zentralen Nervensystem exprimiert (Kortex, Basalganglien, Hippocampus, Kleinhirn, Hypothalamus) sowie in peripheren Geweben (Fettgewebe, Leber, GI-Trakt). Gekoppelt an Gi/o-Proteine — hemmen Adenylylcyclase, reduzieren cAMP, modulieren Ionenkanäle (aktivieren GIRK, hemmen VGCC).",
+            evidenceLevel: "Level 2a",
+            citation: "Mackie K. Cannabinoid receptors: where they are and what they do. J Neuroendocrinol. 2008;20 Suppl 1:10-14."
+          },
+          {
+            label: "ii",
+            text: "CB2-Rezeptoren: Primär auf Immunzellen (Mikroglia, Makrophagen, B-Zellen, T-Zellen, NK-Zellen), Milz, Mandeln und Knochenmark. Auch in geringerem Maße in ZNS-Neuronen exprimiert (Hirnstamm, Kortex). Aktivierung moduliert Zytokinfreisetzung, Immunzellmigration und Neuroinflammation.",
+            evidenceLevel: "Level 2a",
+            citation: "Turcotte C, Blanchet MR, Laviolette M, Bhilement N. The CB2 receptor and its role as a regulator of inflammation. Cell Mol Life Sci. 2016;73(23):4449-4470."
+          },
+          {
+            label: "iii",
+            text: "Jenseits von CB1/CB2: Wachsende Evidenz für Cannabinoid-Aktivität an GPR55 ('CB3-Kandidat'), TRPV1 (Vanilloid-Rezeptor), PPARγ (Kernrezeptor) und 5-HT1A (Serotonin-Rezeptor) — Erweiterung des 'Cannabinoid-Rezeptoroms'.",
+            evidenceLevel: "Level 3 – Präklinisch + früh translational",
+            citation: "Morales P, Reggio PH. An update on non-CB1, non-CB2 cannabinoid related G-protein-coupled receptors. Cannabis Cannabinoid Res. 2017;2(1):265-273."
+          }
+        ]
       },
       {
         letter: "b",
-        text: "Beschreiben Sie die Grundlagen der Endocannabinoid-Produktion, -Funktion, Enzymhemmung und -aktivierung sowie die Aufrechterhaltung des Endocannabinoid-Tonus."
+        text: "Beschreiben Sie die Grundlagen der Endocannabinoid-Produktion, -Funktion, Enzymhemmung und -aktivierung — einschließlich der Aufrechterhaltung des Endocannabinoid-Tonus durch bedarfsgesteuerte Synthese und schnellen Abbau.",
+        clinicalPearl: "FAAH-Inhibitoren (z. B. PF-04457845) befinden sich in klinischen Studien für PTBS und Cannabiskonsumstörung — die gezielte Modulation des Endocannabinoid-Tonus ist eine wachsende pharmakologische Strategie.",
+        evidenceLevel: "Level 1b – Systematische Reviews der ECS-Biochemie",
+        citation: "Lu HC, Mackie K. Review of the endocannabinoid system. Biol Psychiatry Cogn Neurosci Neuroimaging. 2021;6(6):607-615.",
+        subPoints: [
+          {
+            label: "i",
+            text: "Anandamid (AEA): Bedarfsgesteuert aus dem Membranphospholipid N-Arachidonoylphosphatidylethanolamin (NAPE) durch NAPE-PLD synthetisiert. Partialagonist an CB1, schwächer an CB2. Aktiviert auch TRPV1. Wird primär durch Fettsäureamidhydrolase (FAAH) abgebaut.",
+            evidenceLevel: "Level 2a",
+            citation: "Devane WA et al. Isolation and structure of a brain constituent that binds to the cannabinoid receptor. Science. 1992;258(5090):1946-1949."
+          },
+          {
+            label: "ii",
+            text: "2-Arachidonoylglycerol (2-AG): Das häufigste Endocannabinoid im Gehirn. Synthetisiert durch Diacylglycerollipase (DAGLα/β) aus Diacylglycerol. Vollagonist an CB1 und CB2. Primär durch Monoacylglycerollipase (MAGL) abgebaut, mit Beiträgen von ABHD6 und ABHD12.",
+            evidenceLevel: "Level 2a",
+            citation: "Sugiura T et al. 2-Arachidonoylglycerol: a possible endogenous cannabinoid receptor ligand in brain. Biochem Biophys Res Commun. 1995;215(1):89-97."
+          },
+          {
+            label: "iii",
+            text: "Retrograde Signalübertragung: Endocannabinoide werden postsynaptisch synthetisiert und wandern rückwärts über den synaptischen Spalt, um präsynaptische CB1-Rezeptoren zu aktivieren und die Neurotransmitterfreisetzung zu unterdrücken (sowohl exzitatorisch als auch inhibitorisch). Dies liegt der depolarisationsinduzierten Unterdrückung der Inhibition (DSI) und Exzitation (DSE) zugrunde.",
+            evidenceLevel: "Level 1b",
+            citation: "Kano M et al. Endocannabinoid-mediated control of synaptic transmission. Physiol Rev. 2009;89(1):309-380."
+          },
+          {
+            label: "iv",
+            text: "Endocannabinoid-Tonus: Das Gleichgewicht von Synthese- (NAPE-PLD, DAGL) und Abbauenzymen (FAAH, MAGL) bestimmt die basale ECS-Signalgebung. Die Theorie des 'Klinischen Endocannabinoid-Mangels' (CED) postuliert, dass ein reduzierter Tonus Migräne, Fibromyalgie und Reizdarmsyndrom zugrunde liegen könnte.",
+            evidenceLevel: "Level 3 – Hypothese mit wachsender klinischer Unterstützung",
+            citation: "Russo EB. Clinical endocannabinoid deficiency reconsidered. Cannabis Cannabinoid Res. 2016;1(1):154-165."
+          }
+        ]
       },
       {
         letter: "c",
-        text: "Verstehen Sie die Rolle des Endocannabinoid-Systems bei der Regulierung zentraler physiologischer Funktionen (z. B. Stress, Schlaf, Appetit, Schmerz, Immunität)."
+        text: "Verstehen Sie die Rolle des Endocannabinoid-Systems bei der Regulierung zentraler physiologischer Funktionen — einschließlich Schmerzverarbeitung, Immunmodulation, Stress/Angst, Appetit/Stoffwechsel, Schlaf und Neuroprotektion.",
+        clinicalPearl: "Das ECS moduliert praktisch jedes physiologische System, was sowohl das breite therapeutische Potenzial von Cannabinoiden als auch ihr breites Nebenwirkungsprofil erklärt.",
+        evidenceLevel: "Level 1a – Mehrere systematische Reviews",
+        citation: "Pacher P, Bátkai S, Kunos G. The endocannabinoid system as an emerging target of pharmacotherapy. Pharmacol Rev. 2006;58(3):389-462.",
+        subPoints: [
+          {
+            label: "i",
+            text: "Schmerz: Das ECS moduliert die Nozizeption auf peripherer, spinaler und supraspinaler Ebene. CB1-Aktivierung im Hinterhorn und PAG unterdrückt aufsteigende Schmerzsignale. Periphere CB2-Aktivierung reduziert entzündliche Schmerzmediatoren.",
+            evidenceLevel: "Level 1a",
+            citation: "Woodhams SG et al. The role of the endocannabinoid system in pain. Handb Exp Pharmacol. 2015;227:119-143."
+          },
+          {
+            label: "ii",
+            text: "Immunfunktion: CB2-Aktivierung auf Immunzellen moduliert die Zytokinfreisetzung (reduziert TNF-α, IL-1β, IL-6), hemmt die Immunzellmigration und verschiebt das T-Helfer-Gleichgewicht von Th1 Richtung Th2. Mikrogliale CB2-Aktivierung dämpft Neuroinflammation.",
+            evidenceLevel: "Level 2a",
+            citation: "Nagarkatti P et al. Cannabinoids as novel anti-inflammatory drugs. Future Med Chem. 2009;1(7):1333-1349."
+          },
+          {
+            label: "iii",
+            text: "Stress und Angst: AEA-Signalgebung in der Amygdala und dem präfrontalen Kortex reguliert die Stressreaktion (HPA-Achse). Akuter Stress mobilisiert rasch 2-AG (anxiolytisch), während chronischer Stress AEA abbaut (anxiogen). CB1-Knockout-Mäuse zeigen erhöhte Angst und beeinträchtigte Furchtextinktion.",
+            evidenceLevel: "Level 2b",
+            citation: "Hill MN et al. Endogenous cannabinoid signaling is essential for stress adaptation. Proc Natl Acad Sci. 2010;107(20):9406-9411."
+          },
+          {
+            label: "iv",
+            text: "Appetit und Stoffwechsel: Hypothalamische CB1-Aktivierung stimuliert den Appetit (orexigen). Peripheres CB1 in Leber und Fettgewebe beeinflusst Lipogenese, Insulinsensitivität und Energiespeicherung. CB1-Antagonismus reduziert Nahrungsaufnahme und Körpergewicht (vgl. Rimonabant).",
+            evidenceLevel: "Level 1b",
+            citation: "Di Marzo V et al. Leptin-regulated endocannabinoids are involved in maintaining food intake. Nature. 2001;410(6830):822-825."
+          },
+          {
+            label: "v",
+            text: "Schlaf: AEA erhöht Adenosinspiegel im basalen Vorderhirn und fördert NREM-Schlaf. 2-AG-Spiegel schwanken mit dem zirkadianen Rhythmus. THC reduziert akut die Einschlaflatenz, kann aber bei chronischem Gebrauch den REM-Schlaf unterdrücken; CBD (≥160 mg) kann die Gesamtschlafzeit verlängern.",
+            evidenceLevel: "Level 2b",
+            citation: "Kesner AJ, Lovinger DM. Cannabinoids, endocannabinoids and sleep. Front Mol Neurosci. 2020;13:125."
+          },
+          {
+            label: "vi",
+            text: "Neuroprotektion: ECS-Aktivierung reduziert Exzitotoxizität (Glutamat-Überlauf), oxidativen Stress und Neuroinflammation. Relevant bei Schädel-Hirn-Trauma, Multipler Sklerose, Parkinson und Alzheimer in Tiermodellen. Sowohl CB1- als auch CB2-Signalwege sind beteiligt.",
+            evidenceLevel: "Level 2b – Überwiegend präklinisch mit aufkommenden klinischen Daten",
+            citation: "Fernández-Ruiz J et al. Cannabinoids as neuroprotective agents. In: Handbook of Cannabis. Oxford Univ Press; 2014:363-379."
+          }
+        ]
       }
     ]
   },
@@ -712,6 +1158,202 @@ const SAMPLE_QUIZ_DE: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation: "Kompetenz 6.d.i erfordert die Beschreibung der hepatischen Cytochrom-P450-Enzyme, die von exogenen Cannabinoiden genutzt werden."
+  },
+  // --- Domain 5: Risikobewertung (15 Fragen, progressive Schwierigkeit) ---
+  {
+    id: 5,
+    domainId: 5,
+    question: "Welche ist die HÄUFIGSTE akute Nebenwirkung von THC-dominantem Cannabis?",
+    options: [
+      "Krampfanfälle",
+      "Tachykardie und Angst",
+      "Nierenversagen",
+      "Hyperglykämie"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.i: THC verursacht akut häufig Tachykardie, Angst, Schwindel und Mundtrockenheit. Krampfanfälle und Organversagen sind keine typischen THC-Effekte. (Volkow ND et al. NEJM. 2014;370:2219-2227.)"
+  },
+  {
+    id: 6,
+    domainId: 5,
+    question: "Cannabis-Rauchexposition ist mit welchem respiratorischen Effekt verbunden?",
+    options: [
+      "Keinerlei respiratorische Effekte",
+      "Chronische Bronchitis-Symptome (Husten, Auswurf, Giemen)",
+      "Lungenfibrose bei den meisten Konsumenten",
+      "Verbesserte Lungenfunktion durch Bronchodilatation"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.iii: Gerauchtes Cannabis ist mit chronischen Bronchitis-Symptomen assoziiert. Vaporisation reduziert, eliminiert aber nicht die Atemwegsreizung. (Tashkin DP. Ann Am Thorac Soc. 2013;10(3):239-247.)"
+  },
+  {
+    id: 7,
+    domainId: 5,
+    question: "Wie lange nach inhalativem Cannabiskonsum ist die Fahrtauglichkeit signifikant beeinträchtigt?",
+    options: [
+      "Nur 10 Minuten",
+      "2–4 Stunden (bis zu 6 bei Erstanwendern)",
+      "Exakt 24 Stunden",
+      "Cannabis beeinträchtigt das Fahren nicht"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.ii: Akute THC-Beeinträchtigung der Psychomotorik dauert 2–4 Stunden nach Inhalation, länger bei Erstanwendern. (Hartman RL, Huestis MA. Clin Chem. 2013;59(3):478-492.)"
+  },
+  {
+    id: 8,
+    domainId: 5,
+    question: "Gemäß DSM-5, welches ist ein Kriterium für eine Cannabis-Konsumstörung?",
+    options: [
+      "Mindestens einmaliger Cannabiskonsum",
+      "Anhaltender Wunsch oder erfolglose Versuche, den Konsum zu reduzieren oder zu kontrollieren",
+      "Jegliche Toleranzentwicklung",
+      "Euphorieerleben"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.b.i–ii: DSM-5-Kriterien für CUD umfassen anhaltenden Wunsch zur Reduktion, fortgesetzten Konsum trotz Problemen, Toleranz, Entzug und Craving. Einmaliger Konsum oder Euphorie allein qualifizieren nicht. (APA. DSM-5-TR. 2022.)"
+  },
+  {
+    id: 9,
+    domainId: 5,
+    question: "Was sind die Leitsymptome des Cannabinoid-Hyperemesis-Syndroms (CHS)?",
+    options: [
+      "Gewichtszunahme und Obstipation",
+      "Zyklisches Erbrechen, Bauchschmerzen und zwanghaftes heißes Baden",
+      "Chronische Diarrhö und Dehydratation",
+      "Psychose und Krampfanfälle"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.b.i: CHS präsentiert sich mit zyklischer Übelkeit/Erbrechen, Bauchschmerzen und Linderung durch heiße Duschen, typisch bei chronisch starken Konsumenten. Abstinenz ist die definitive Therapie. (Sorensen CJ et al. J Med Toxicol. 2017;13(1):71-87.)"
+  },
+  {
+    id: 10,
+    domainId: 5,
+    question: "Was ist die Hauptsorge bezüglich Cannabiskonsum in der Schwangerschaft?",
+    options: [
+      "Gesteigerter mütterlicher Appetit",
+      "Assoziation mit niedrigem Geburtsgewicht, Frühgeburt und potenziellen neurodevelopmentalen Effekten",
+      "Cannabis ist nachweislich sicher in der Schwangerschaft",
+      "Es reduziert Morgenübelkeit ohne Risiko"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.v: Cannabiskonsum in der Schwangerschaft ist mit niedrigerem Geburtsgewicht, Frühgeburt und möglichen Auswirkungen auf die fetale Gehirnentwicklung assoziiert. ACOG und AAP raten vom Konsum während Schwangerschaft/Stillzeit ab. (Corsi DJ et al. JAMA. 2019;322(2):145-152.)"
+  },
+  {
+    id: 11,
+    domainId: 5,
+    question: "Welcher Kontaminant wird am HÄUFIGSTEN in unsachgemäß angebautem Cannabis gefunden?",
+    options: [
+      "Prionen",
+      "Mykotoxine (Aflatoxine, Ochratoxin A)",
+      "Radioaktive Isotope",
+      "Antibiotika"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.c.i: Mykotoxine (insbesondere von Aspergillus- und Penicillium-Schimmelpilzen) sind die häufigsten biologischen Kontaminanten, neben Pestiziden und Schwermetallen (Blei, Cadmium, Arsen). (McPartland JM, McKernan KJ. J Cannabis Res. 2021;3:21.)"
+  },
+  {
+    id: 12,
+    domainId: 5,
+    question: "Was ist ein bedeutsames Risiko von Delta-8-THC-Produkten?",
+    options: [
+      "Sie haben keine psychoaktive Wirkung",
+      "Sie sind alle FDA-zugelassen und reguliert",
+      "Unregulierte Synthese kann schädliche Nebenprodukte erzeugen, und sie wirken psychoaktiv trotz irreführender Vermarktung",
+      "Delta-8 ist identisch mit CBD"
+    ],
+    correctIndex: 2,
+    explanation: "Kompetenz 5.d: Delta-8-THC wird oft synthetisch aus CBD mit unzuverlässigen Verfahren konvertiert, wobei unbekannte Nebenprodukte entstehen. Es IST psychoaktiv trotz irreführender Vermarktung und bleibt weitgehend unreguliert. (FDA Consumer Update. 2022; Meehan-Atrash J, Rahman I. Chem Res Toxicol. 2022;35(3):420-430.)"
+  },
+  {
+    id: 13,
+    domainId: 5,
+    question: "Ein Bauarbeiter mit gültigem Cannabis-Rezept testet bei einem routinemäßigen Drogenscreening positiv auf THC. Welche Aussage zu seiner Situation ist KORREKT?",
+    options: [
+      "Cannabis-Rezepte setzen alle Arbeitsplatz-Drogentestrichtlinien außer Kraft",
+      "Bundesmitarbeiter und sicherheitssensible Positionen können trotzdem Konsequenzen haben; Schutz variiert nach Bundesstaat/Land",
+      "Arbeitgeber dürfen unter keinen Umständen auf THC testen",
+      "Ein Cannabis-Ausweis garantiert Immunität an allen Arbeitsplätzen"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.e.i: Berufliche Risiken sind erheblich. In Deutschland: Unter dem MedCanG haben Patienten mit ärztlichem Rezept grundsätzlich Recht auf Medikation, aber sicherheitsrelevante Tätigkeiten erfordern Fahreignung/Arbeitsfähigkeit. Arbeitgeber können in begründeten Fällen Untersuchungen anordnen."
+  },
+  {
+    id: 14,
+    domainId: 5,
+    question: "Cannabis-Entzugssyndrom präsentiert sich typischerweise mit welchem Symptomcluster?",
+    options: [
+      "Krampfanfälle und Delirium tremens",
+      "Reizbarkeit, Schlaflosigkeit, verminderter Appetit und Angst mit Spitzenwerten 2–6 Tage nach Abstinenz",
+      "Halluzinationen und Psychose",
+      "Es gibt keine Entzugssymptome"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.b.i: Cannabis-Entzugssyndrom (DSM-5) umfasst Reizbarkeit, Angst, Schlaflosigkeit, Appetitverlust, Unruhe und depressive Stimmung. Beginn innerhalb 1 Woche, Spitze 2–6 Tage, Dauer bis 2 Wochen. Anders als bei Alkohol/Benzodiazepinen sind Krampfanfälle kein Merkmal. (Bonnet U, Preuss UW. Dtsch Arztebl Int. 2017;114:174-181.)"
+  },
+  {
+    id: 15,
+    domainId: 5,
+    question: "Ein Standard-Urin-Immunoassay für Cannabis weist welchen Metaboliten nach?",
+    options: [
+      "THC selbst (Muttersubstanz)",
+      "11-Nor-9-Carboxy-THC (THC-COOH)",
+      "Cannabidiol (CBD)",
+      "Anandamid (AEA)"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.f: Standard-Urinassays weisen THC-COOH nach, einen nicht-psychoaktiven Metaboliten. Nachweisfenster: Gelegenheitskonsumenten 3–4 Tage; chronische Konsumenten bis 30+ Tage. CBD und Endocannabinoide werden NICHT nachgewiesen. Bestätigungstest via GC-MS oder LC-MS/MS. (Huestis MA. Clin Chem. 2007;53(6):1194-1209.)"
+  },
+  {
+    id: 16,
+    domainId: 5,
+    question: "Welche Aussage über Cannabiskonsum bei älteren Erwachsenen (≥65 Jahre) ist am ZUTREFFENDSTEN?",
+    options: [
+      "Ältere Erwachsene sind resistent gegen Cannabis-Nebenwirkungen",
+      "Altersbedingte pharmakokinetische Veränderungen (reduzierte hepatische/renale Clearance, erhöhte Fettspeicher) steigern Empfindlichkeit und verlängern Wirkung, erhöhen Sturz- und kognitive Beeinträchtigungsrisiken",
+      "Dosierung ist identisch mit jüngeren Erwachsenen",
+      "THC-dominante Vaporizer sind die sicherste Option"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.vi: Ältere Erwachsene haben veränderte Pharmakokinetik (↓ Metabolismus, ↑ Fettspeicherung, ↑ Blut-Hirn-Schranken-Permeabilität), die die Cannabinoid-Empfindlichkeit erhöht. Stürze, orthostatische Hypotonie, kognitive Beeinträchtigung und Arzneimittelinteraktionen sind besondere Bedenken. (van den Elsen GAH et al. Drugs Aging. 2014;31(11):781-790.)"
+  },
+  {
+    id: 17,
+    domainId: 5,
+    question: "Starker Cannabiskonsum bei Jugendlichen (vor dem 18. Lebensjahr) ist mit welchem Langzeitrisiko verbunden?",
+    options: [
+      "Keine anerkannten neurodevelopmentalen Effekte",
+      "Reduzierter IQ, beeinträchtigte Exekutivfunktion und erhöhtes Risiko für psychotische Störungen (OR ~1,4–2,0 für Schizophrenie)",
+      "Beschleunigte Hirnreifung",
+      "Verbesserte schulische Leistung"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.a.iv: Jugendlicher Cannabiskonsum während der Neuroentwicklung ist mit reduzierter kognitiver Funktion, niedrigerem Bildungsniveau und dosisabhängig erhöhtem Risiko für psychotische Störungen assoziiert (Marconi A et al. Schizophr Bull. 2016;42(5):1262-1269)."
+  },
+  {
+    id: 18,
+    domainId: 5,
+    question: "Im Rahmen der Schadensminimierung (Harm Reduction) — welche professionelle Rolle ist bei Cannabis-bezogenen Störungen am WICHTIGSTEN?",
+    options: [
+      "Nur Psychiater können beteiligt sein",
+      "Multidisziplinäre Teams inkl. Suchtmedizin, psychische Gesundheit, Hausarztmedizin, Pharmazie und Sozialarbeit",
+      "Ausschließlich Cannabis-Berater",
+      "Keine professionelle Intervention nötig"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.g: Multidisziplinäre Gesundheitsteams — inkl. Suchtmedizin, Psychiatrie, Allgemeinmedizin, Klinische Pharmazie, Pflege und Sozialarbeit — werden für die Behandlung Cannabis-bezogener Störungen und die Umsetzung von Harm-Reduction-Strategien empfohlen. (Zolotov Y et al. JAMA Netw Open. 2025;8(10):e2535049.)"
+  },
+  {
+    id: 19,
+    domainId: 5,
+    question: "Ein Patient reist von einem Bundesland mit liberaler Cannabis-Regelung in ein restriktiveres. Was riskiert er mit THC-Produkten?",
+    options: [
+      "Kein rechtliches Risiko; Cannabis-Rezepte gelten überall gleich",
+      "In Deutschland unter MedCanG mit ärztlichem Rezept und Apotheken-Abgabenachweis ist Transport legal; international variieren Gesetze drastisch und Transport über Landesgrenzen kann strafbar sein",
+      "Nur ein geringes Bußgeld",
+      "Automatische Konfiszierung ohne strafrechtliche Haftung"
+    ],
+    correctIndex: 1,
+    explanation: "Kompetenz 5.e.ii: In Deutschland ist der Transport von ärztlich verschriebenem Cannabis mit Rezeptnachweis legal. International ist der Transport über Landesgrenzen jedoch oft strafbar. Patienten müssen über Reisebeschränkungen aufgeklärt werden. Schengen-Bescheinigung (Art. 75) für 30-Tage-Reisen in EU-Staaten möglich."
   }
 ];
 
@@ -902,6 +1544,46 @@ const PATIENT_CASES_DE: PatientCase[] = [
         { label: "Ignorieren, ist nicht verbunden", isCorrect: false, feedback: "Falsch. Dies ist ein klassisches Zeichen einer Arzneimittelwechselwirkung." },
         { label: "CYP450-Interaktionen prüfen; CBD könnte Metabolismus von Sertralin hemmen", isCorrect: true, feedback: "Korrekt. Dosisanpassung des SSRI (unter ärztlicher Aufsicht) oder CBD kann nötig sein." },
         { label: "THC erhöhen zum Ausgleich", isCorrect: false, feedback: "Falsch. THC behebt keine metabolische Enzyminteraktion und kann Angst verschlimmern." }
+      ]
+    }
+  },
+  {
+    id: 'case-4',
+    name: "Thomas K.",
+    age: 58,
+    condition: "Diabetische periphere Neuropathie",
+    tags: ["Neuropathie", "CYP450", "Polypharmazie", "Schmerz", "MedCanG"],
+    history: "Typ-2-Diabetes seit 15 Jahren. Bilaterale brennende/kribbelnde Fußschmerzen (NRS 7/10) trotz Gabapentin 1800 mg/d und Duloxetin 60 mg/d. HbA1c 7,2%. Milde Lebersteatose im Ultraschall. Pregabalin-Versuch gescheitert (Ödeme). Cannabis-naiv. Keine psychiatrische Anamnese. Lebt in Deutschland — berechtigt unter MedCanG (Medizinal-Cannabisgesetz, April 2024): Jeder Arzt darf verschreiben; keine vorherige BfArM-Genehmigung nötig; Abgabe über Apotheke; GKV-Kostenübernahme erfordert vorherige Krankenkassen-Genehmigung.",
+    medications: ["Gabapentin 1800 mg/d", "Duloxetin 60 mg/d", "Metformin 2000 mg/d", "Empagliflozin 25 mg/d", "Rosuvastatin 20 mg/d"],
+    interactions: [
+      { medication: 'Gabapentin', severity: 'Moderate', mechanism: 'Pharmakodynamisch: additive ZNS-Depression (Sedierung, Schwindel). Keine direkte CYP450-Interaktion (renal eliminiert), aber kombiniertes Sedierungsrisiko erfordert Dosisüberwachung.' },
+      { medication: 'Duloxetin', severity: 'High', mechanism: 'CYP1A2-Substrat + CYP2D6-Substrat/-Inhibitor. CBD hemmt CYP2D6 → kann Duloxetin-Serumspiegel um 20–50% erhöhen, Risiko für Serotonin-Syndrom, Hypertension und Hepatotoxizität. THC ist schwaches CYP2D6-Substrat.' },
+      { medication: 'Metformin', severity: 'Low', mechanism: 'Keine signifikante CYP450-Interaktion (renal eliminiert). THC kann vorübergehend Glukose über CB1-vermittelte hepatische Glukoseproduktion beeinflussen; BZ überwachen.' },
+      { medication: 'Empagliflozin', severity: 'Low', mechanism: 'Primär UGT-metabolisiert; minimale CYP-Interaktion. Theoretische additive orthostatische Hypotension mit THC — bei älteren Patienten überwachen.' },
+      { medication: 'Rosuvastatin', severity: 'Moderate', mechanism: 'Rosuvastatin teilweise CYP2C9/BCRP-transportiert. CBD hemmt CYP2C9 schwach und BCRP → kann Statin-Spiegel moderat erhöhen. Auf Myalgie/CK-Erhöhung überwachen.' }
+    ],
+    cannabisHistory: 'Naive',
+    goals: "Neuropathischen Schmerz von 7/10 auf ≤4/10 senken ohne übermäßige Sedierung. Fahrtauglichkeit erhalten (wichtig für Arbeit). Bereit, inhalative und orale Wege zu versuchen.",
+    historyData: [
+        { week: 0, doseMg: 0, symptomScore: 7, sideEffectScore: 0 }
+    ],
+    idealTreatment: {
+      productTypes: ['Balanced 1:1', 'CBD-Dominant'],
+      routes: ['Sublingual (Tincture)', 'Inhalation (Vaporized)'],
+      minDose: 2,
+      maxDose: 10
+    },
+    feedback: {
+      success: "Ausgezeichnetes klinisches Denken. Ein ausgewogenes THC:CBD- oder CBD-dominantes Produkt sublingual ist evidenzbasiert für neuropathischen Schmerz (NASEM 2017, Level 1b) bei Minimierung von Fahrbeeinträchtigung. 'Start Low, Go Slow' (1–2,5 mg THC abends, Titration über 2–4 Wochen) ist entscheidend bei Polypharmazie und CYP2D6-Interaktion mit Duloxetin. Unter deutschem MedCanG kann jeder Arzt verschreiben — kein Facharzt nötig. GKV-Kostenübernahme frühzeitig beantragen. Überwachung: Sedierung, BZ, Statin-NW, Duloxetin-UAW.",
+      failure: "Überprüfen Sie Kompetenzen 4.a.iii (Neuropathischer Schmerz), 6.a.i (Dosierung/Monitoring) und 6.d.i (CYP450-Interaktionen). Hauptbedenken: (1) Duloxetin + CBD = CYP2D6-Hemmung → Serotonin-Syndrom-Risiko; (2) Gabapentin + THC = additive Sedierung; (3) Hohes THC beeinträchtigt Fahrtauglichkeit — Fahreignungsbegutachtung in Deutschland obligatorisch. Ein ausgewogener oder CBD-dominanter sublingualer Ansatz mit vorsichtiger Titration ist am sichersten."
+    },
+    followUp: {
+      scenario: "4 Wochen Follow-up: Thomas berichtet Schmerzreduktion auf 5/10 unter ausgewogener 1:1-Tinktur (5 mg THC / 5 mg CBD sublingual abends). Schlaf verbessert. Jedoch neue morgendliche Schläfrigkeit; seine Frau sagt, er sei 'wackeliger' beim Aufstehen. Letzter HbA1c leicht gesunken auf 6,9%. Er fragt nach Autofahren zur Arbeit.",
+      options: [
+        { label: "Dosis auf 10 mg THC / 10 mg CBD verdoppeln für schnellere Schmerzreduktion", isCorrect: false, feedback: "Falsch. Dosisverdopplung bei bestehender Schläfrigkeit und Unsicherheit würde ZNS-Depression verschlimmern (Gabapentin-Synergie) und Fahrtauglichkeit gefährden. Dosissteigerungen ≤2,5 mg THC pro Schritt alle 3–7 Tage (Kompetenz 6.a.i)." },
+        { label: "Gabapentin um 300 mg reduzieren, Cannabis-Dosis stabil halten, in 2 Wochen re-evaluieren, Fahreignungsberatung durchführen", isCorrect: true, feedback: "Korrekt. Die Schläfrigkeit ist wahrscheinlich additive ZNS-Depression aus Gabapentin + THC. Gabapentin-Reduktion (in Abstimmung mit dem verschreibenden Arzt) bei stabiler Cannabinoid-Dosis kann Sedierung reduzieren. Nach deutschem Recht (§ 24a StVG + CanG) sind Patienten mit verschriebenem Cannabis nicht automatisch fahrunfähig, müssen aber Beeinträchtigungsfreiheit nachweisen (Fahreignung). Eine 6-wöchige stabile Dosierungsphase und THC-Blutspiegelkontrolle werden vor Wiederaufnahme des Fahrens empfohlen. Beratung dokumentieren." },
+        { label: "Komplett auf hochdosiertes CBD-Isolat (200 mg/d) umstellen, THC absetzen", isCorrect: false, feedback: "Suboptimal. CBD allein hat einige analgetische Eigenschaften, aber NNT für neuropathischen Schmerz mit CBD-only ist unzureichend belegt. THC ist die primäre evidenzbasierte analgetische Komponente (Aviram & Samuelly-Leichtag 2017). Hochdosiertes CBD verstärkt zudem die CYP2D6-Inhibition von Duloxetin." },
+        { label: "THC-dominanten Vaporizer für Durchbruchschmerzen tagsüber hinzufügen", isCorrect: false, feedback: "Riskant. Inhaliertes THC tagsüber würde fast sicher die Fahrtauglichkeit beeinträchtigen und ist bei einem Cannabis-naiven Patienten mit beruflicher Fahrnotwendigkeit kontraindiziert. Nicht vereinbar mit Patientenzielen oder Fahreignungsanforderungen." }
       ]
     }
   }

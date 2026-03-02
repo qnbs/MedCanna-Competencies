@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { LayoutDashboard, BookOpen, Brain, GraduationCap, Info, Beaker, Leaf, Settings as SettingsIcon, HelpCircle } from 'lucide-react';
+import { LayoutDashboard, BookOpen, Brain, GraduationCap, Info, Beaker, Leaf, Settings as SettingsIcon, HelpCircle, Library } from 'lucide-react';
+import References from './components/References';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Dashboard from './components/Dashboard';
 import CurriculumViewer from './components/CurriculumViewer';
@@ -14,9 +15,10 @@ import { ViewState } from './types';
 
 // Wrapper component to use the context hooks
 const AppContent: React.FC = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const [currentView, setCurrentView] = useState<ViewState>('dashboard');
   const [selectedDomain, setSelectedDomain] = useState<number | undefined>(undefined);
+  const [showReferences, setShowReferences] = useState(false);
 
   const handleNavigate = (view: ViewState, domainId?: number) => {
     setCurrentView(view);
@@ -84,17 +86,20 @@ const AppContent: React.FC = () => {
             <span className="font-bold text-slate-800 text-lg">MedCanna</span>
         </div>
         <div className="flex gap-2">
-            <button className="p-2 text-slate-500 hover:text-emerald-600 active:scale-95 transition-transform" onClick={() => setCurrentView('settings')}>
+            <button className="p-2 text-slate-500 hover:text-emerald-600 active:scale-95 transition-transform" onClick={() => setShowReferences(true)} title={t('nav.references') || 'References'} aria-label={t('nav.references') || 'References'}>
+                <Library size={22} />
+            </button>
+            <button className="p-2 text-slate-500 hover:text-emerald-600 active:scale-95 transition-transform" onClick={() => setCurrentView('settings')} aria-label={t('nav.settings') || 'Settings'}>
                 <SettingsIcon size={22} />
             </button>
-             <button className="p-2 text-slate-500 hover:text-emerald-600 active:scale-95 transition-transform" onClick={() => setCurrentView('help')}>
+             <button className="p-2 text-slate-500 hover:text-emerald-600 active:scale-95 transition-transform" onClick={() => setCurrentView('help')} aria-label={t('nav.help') || 'Help'}>
                 <HelpCircle size={22} />
             </button>
         </div>
       </div>
 
       {/* Sidebar Navigation (Desktop) / Bottom Nav (Mobile) */}
-      <nav className="
+      <nav aria-label="Main navigation" className="
         fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 flex justify-between items-center px-4 pb-safe pt-2
         md:relative md:w-20 md:flex-col md:justify-start md:border-t-0 md:border-r md:h-screen md:p-4 md:gap-4 md:pb-4 md:pt-6
         lg:w-64 overflow-y-auto scrollbar-hide
@@ -176,6 +181,12 @@ const AppContent: React.FC = () => {
                 onClick={() => setCurrentView('help')} 
             />
             <NavItem 
+                icon={<Library size={24} />} 
+                label={language === 'de' ? 'Referenzen' : 'References'}
+                active={false} 
+                onClick={() => setShowReferences(true)} 
+            />
+            <NavItem 
                 icon={<Info size={24} />} 
                 label={t('nav.about')}
                 active={currentView === 'about'} 
@@ -186,11 +197,14 @@ const AppContent: React.FC = () => {
 
       {/* Main Content Area */}
       {/* Added pb-24 to ensure content isn't hidden behind fixed bottom nav on mobile */}
-      <main className="flex-1 p-4 md:p-8 overflow-y-auto h-[calc(100vh-60px)] md:h-screen w-full pb-28 md:pb-8">
+      <main id="main-content" role="main" className="flex-1 p-4 md:p-8 overflow-y-auto h-[calc(100vh-60px)] md:h-screen w-full pb-28 md:pb-8">
         <div className="max-w-7xl mx-auto w-full h-full">
             {renderContent()}
         </div>
       </main>
+
+      {/* References Modal */}
+      <References isOpen={showReferences} onClose={() => setShowReferences(false)} />
     </div>
   );
 };
@@ -207,6 +221,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, label, active, onClick, compact
   return (
     <button
       onClick={onClick}
+      aria-label={label}
+      aria-current={active ? 'page' : undefined}
       className={`
         flex flex-col md:flex-row items-center md:gap-3 p-2 md:p-3 rounded-xl transition-all duration-200
         md:w-full md:justify-start justify-center flex-1 md:flex-none relative overflow-hidden group

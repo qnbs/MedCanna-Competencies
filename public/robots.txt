@@ -1,0 +1,5 @@
+# robots.txt for MedCanna Competencies Guide
+User-agent: *
+Allow: /
+
+Sitemap: https://qnbs.github.io/MedCanna-Competencies/sitemap.xml

@@ -1,66 +1,122 @@
 
 # MedCanna Competencies Guide / MedCanna Kompetenzleitfaden
 
-## English
-
-### Overview
-The **MedCanna Competencies Guide** is an interactive, educational web application designed to help healthcare professionals, students, and researchers master the medical cannabis competencies outlined in the 2025 consensus statement by **Zolotov Y et al.** published in *JAMA Network Open*.
-
-This application serves as a bridge between academic literature and clinical practice, offering a digital, explorable format for the 6 Core Competency Domains.
-
-### Features
-
-1.  **Curriculum Explorer**: Navigate through the complete competency framework, including all sub-points.
-2.  **Clinical Simulator**: Engage in longitudinal patient cases (EHR style) to practice dosing, product selection, and monitoring.
-3.  **Plant Pharmacology Guide**: Detailed reference for cannabinoids, terpenes, and flavonoids.
-4.  **AI Tutor**: Context-aware AI assistant (powered by Google Gemini) grounded strictly in the consensus statement.
-5.  **Quiz Mode**: Test your knowledge with domain-specific questions.
-6.  **Multi-Language Support**: Fully localized in **English** and **German**.
-
-### Getting Started
-
-1.  **Installation**: Clone the repository and install dependencies (if running locally).
-2.  **Configuration**: Ensure you have a valid Google Gemini API Key in your environment variables if running the AI Tutor.
-3.  **Running**: Open `index.html` or serve via a local server.
-
-### Usage Guide
-
--   **Dashboard**: View the radar chart to see the scope of competencies. Click quick links to jump to specific domains.
--   **Settings**: Navigate to the Settings page via the sidebar to switch between English and German.
--   **Simulator**: Select a patient case. Review the "Chart" tabs (Overview, Meds, Notes). Make treatment decisions and receive immediate feedback based on clinical guidelines.
-
-### Citation
-> Zolotov Y, Temple LM, Isralowitz R, et al. Developing medical cannabis competencies: a consensus statement. JAMA Netw Open. 2025;8(10):e2535049.
+> **Disclaimer / Haftungsausschluss**
+> This application is for **educational purposes only**. It does **not** constitute medical advice. Always consult licensed healthcare professionals and verify information against the original publication and your local laws before making clinical decisions. Cannabis regulations vary by jurisdiction.
+>
+> Diese Anwendung dient **ausschließlich Bildungszwecken**. Sie stellt **keine** medizinische Beratung dar. Konsultieren Sie stets medizinisches Fachpersonal und überprüfen Sie die Informationen anhand der Originalpublikation und Ihrer lokalen Gesetze.
 
 ---
 
-## Deutsch
+## Live Demo
 
-### Überblick
-Der **MedCanna Kompetenzleitfaden** ist eine interaktive, pädagogische Webanwendung, die entwickelt wurde, um medizinisches Fachpersonal, Studenten und Forscher bei der Beherrschung der medizinischen Cannabis-Kompetenzen zu unterstützen, die im Konsensus-Statement 2025 von **Zolotov Y et al.** in *JAMA Network Open* dargelegt wurden.
+**[https://qnbs.github.io/MedCanna-Competencies/](https://qnbs.github.io/MedCanna-Competencies/)**
 
-Diese Anwendung dient als Brücke zwischen akademischer Literatur und klinischer Praxis und bietet ein digitales, explorierbares Format für die 6 Kernkompetenzbereiche.
+---
 
-### Funktionen
+## Overview / Überblick
 
-1.  **Lehrplan-Explorer**: Navigieren Sie durch den vollständigen Kompetenzrahmen, einschließlich aller Unterpunkte.
-2.  **Klinischer Simulator**: Bearbeiten Sie longitudinale Patientenfälle (im Stil einer elektronischen Patientenakte), um Dosierung, Produktauswahl und Überwachung zu üben.
-3.  **Pflanzenpharmakologie-Leitfaden**: Detaillierte Referenz für Cannabinoide, Terpene und Flavonoide.
-4.  **KI-Tutor**: Kontextbezogener KI-Assistent (betrieben von Google Gemini), der streng auf dem Konsensus-Statement basiert.
-5.  **Quiz-Modus**: Testen Sie Ihr Wissen mit bereichsspezifischen Fragen.
-6.  **Mehrsprachigkeit**: Vollständig lokalisiert in **Englisch** und **Deutsch**.
+The **MedCanna Competencies Guide** is an interactive, educational web application designed to help healthcare professionals, students, and researchers master the medical cannabis competencies outlined in the 2025 consensus statement by **Zolotov Y et al.** published in *JAMA Network Open*.
 
-### Erste Schritte
+Der **MedCanna Kompetenzleitfaden** ist eine interaktive Webanwendung, die medizinisches Fachpersonal bei der Beherrschung der Kompetenzen für medizinisches Cannabis unterstützt.
 
-1.  **Installation**: Repository klonen und Abhängigkeiten installieren (bei lokaler Ausführung).
-2.  **Konfiguration**: Stellen Sie sicher, dass Sie einen gültigen Google Gemini API-Schlüssel in Ihren Umgebungsvariablen haben, wenn Sie den KI-Tutor nutzen.
-3.  **Ausführung**: Öffnen Sie `index.html` oder starten Sie über einen lokalen Server.
+### Features / Funktionen
 
-### Benutzerhandbuch
+| Feature | Description |
+|---|---|
+| **Curriculum Explorer** | Navigate through all 6 core competency domains and 26 subcompetencies |
+| **Clinical Simulator** | Longitudinal patient cases (EHR style) for dosing, product selection, monitoring |
+| **Plant Pharmacology Guide** | Cannabinoids, terpenes, flavonoids reference with entourage effect data |
+| **AI Tutor** | Google Gemini-powered assistant grounded in the consensus statement |
+| **Quiz Mode** | Domain-specific MCQs with detailed explanations |
+| **Multi-Language** | Full EN/DE localization |
 
--   **Dashboard**: Betrachten Sie das Netzdiagramm, um den Umfang der Kompetenzen zu sehen. Klicken Sie auf Schnelllinks, um zu bestimmten Bereichen zu springen.
--   **Einstellungen**: Navigieren Sie über die Seitenleiste zur Einstellungsseite, um zwischen Englisch und Deutsch zu wechseln.
--   **Simulator**: Wählen Sie einen Patientenfall aus. Überprüfen Sie die Registerkarten der "Akte" (Übersicht, Medikamente, Notizen). Treffen Sie Behandlungsentscheidungen und erhalten Sie sofortiges Feedback basierend auf klinischen Leitlinien.
+---
 
-### Zitation
-> Zolotov Y, Temple LM, Isralowitz R, et al. Developing medical cannabis competencies: a consensus statement. JAMA Netw Open. 2025;8(10):e2535049.
+## Getting Started
+
+### Prerequisites
+- Node.js (LTS recommended)
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/qnbs/MedCanna-Competencies.git
+cd MedCanna-Competencies
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## How to Set the Gemini API Key
+
+The AI Tutor requires a **Google Gemini API key**. For security, keys are **never** embedded in the build — they are entered at runtime and stored encrypted in your browser's IndexedDB.
+
+1. Visit [Google AI Studio](https://aistudio.google.com/apikey) and create an API key
+2. *(Recommended)* Restrict the key to `*.github.io` in the API key settings
+3. Open the app → **Settings** → **Gemini API Key** section
+4. Paste your key and click **Save**
+
+The key stays in your browser only. Clearing site data removes it.
+
+---
+
+## Deployment (GitHub Pages)
+
+This repository includes a GitHub Actions workflow that deploys automatically.
+
+### Setup (one-time)
+
+1. Go to **Settings → Pages** in your GitHub repository
+2. Under **Build and deployment**, select **Source: GitHub Actions**
+3. Push to `main` — the workflow triggers automatically
+4. Your site is live at `https://<owner>.github.io/MedCanna-Competencies/`
+
+### Manual deploy
+
+Go to **Actions → Deploy to GitHub Pages → Run workflow**.
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| **Blank page after deploy** | Check that `base` in `vite.config.ts` matches your repo name (`/MedCanna-Competencies/`) |
+| **Assets not loading (404)** | Ensure GitHub Pages source is set to "GitHub Actions", not "Deploy from branch" |
+| **AI Tutor says "key missing"** | Open Settings and enter your Gemini API key |
+| **SPA routes return 404** | The `public/404.html` handles this — ensure it's in the build output |
+
+---
+
+## Tech Stack
+
+- **React 19** + **TypeScript 5.8** + **Vite 6**
+- **Recharts** (data visualization)
+- **Lucide React** (icons)
+- **Google Generative AI SDK** (`@google/genai`)
+- **Tailwind CSS** (utility-first styling)
+- **IndexedDB** (secure client-side key storage)
+
+---
+
+## Citation
+
+> Zolotov Y, Temple LM, Isralowitz R, et al. Developing medical cannabis competencies: a consensus statement. JAMA Netw Open. 2025;8(10):e2535049. doi:10.1001/jamanetworkopen.2025.35049
+
+---
+
+## License
+
+[MIT](LICENSE)

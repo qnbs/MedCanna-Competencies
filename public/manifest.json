@@ -1,0 +1,36 @@
+{
+  "id": "/MedCanna-Competencies/",
+  "name": "MedCanna Competencies Guide",
+  "short_name": "MedCanna",
+  "description": "Interactive medical cannabis competencies guide based on the 2025 JAMA consensus statement.",
+  "start_url": "/MedCanna-Competencies/",
+  "scope": "/MedCanna-Competencies/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#059669",
+  "orientation": "any",
+  "categories": ["education", "medical"],
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
